@@ -16,7 +16,7 @@ const AuthContext = ({children}) => {
                 if(token){
 
     
-                const response = await axios.get('http://localhost:3000/api/auth/verify',{
+                const response = await axios.get('https://backend-api-mu-three.vercel.app/api/auth/verify',{
                     headers :{
                         "Authorization" : `Bearer ${token}`
                     }
