@@ -1,5 +1,5 @@
 import React from 'react'
-import {useAuth} from '../../context/authContext'
+import {useAuth} from '../../context/AuthContext'
 import { FaBars, FaBell, FaSearch, FaUser, FaUserCircle } from 'react-icons/fa'
 
 const Navbar = ({sidebarToggle, setsidebarToggle}) => {
