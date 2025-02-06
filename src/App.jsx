@@ -26,9 +26,7 @@ function App() {
       <Route path ="/admin-dashboard" element={
         <PrivateRoutes>
           <RoleBaseRoutes requiredRole={["admin"]}>
-          <div className='w-full'>
           <AdminDashboard/>
-          </div>
           </RoleBaseRoutes>
         </PrivateRoutes>
        
