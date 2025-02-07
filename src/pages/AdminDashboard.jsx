@@ -13,7 +13,7 @@ const AdminDashboard = () => {
         <div className='flex h-screen'>
         <div className={`flex-1 transition-all duration-300 ${sidebarToggle ? "" : ""} w-full`}>
             <AdminSidebar sidebarToggle={sidebarToggle}/>
-            <div className='flex-1 h-screen ml-64 bg-gray-100'>
+            <div className='flex-1 bg-gray-100 m-full-64 w'>
             <Navbar 
             sidebarToggle={sidebarToggle}
             setsidebarToggle={setsidebarToggle}
