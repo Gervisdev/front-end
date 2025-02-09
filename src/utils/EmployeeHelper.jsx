@@ -8,31 +8,31 @@ export const columns = [
   {
     name: "Image",
     selector: (row) => row.profileImage,
-    width: "60px"
+    width: "100px"
   },
   {
       name: "Nom",
       selector: (row) => row.name,
       sortable: true,
-      width: "60px"
+      width: "180px"
   },
   {
     name: "Poste",
     selector: (row) => row.designation,
-     width: "60px"
+     width: "160px"
   },
  
   {
     name: "Département",
     selector: (row) => row.dep_name,
-    width: "60px"
+    width: "160px"
 },
 
   {
       name: "Action",
       cell: (row) => row.action,
       center :"true",
-       width: "60px"
+       width: "260px"
   },
 ];
 
