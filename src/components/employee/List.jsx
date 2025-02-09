@@ -5,52 +5,6 @@ import DataTable from 'react-data-table-component';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 
-const customStyles = {
-  table: {
-    style: {
-      backgroundColor: 'white',
-      borderRadius: '0.5rem',
-    },
-  },
-  headRow: {
-    style: {
-      backgroundColor: '#f9fafb',
-      borderTopLeftRadius: '0.5rem',
-      borderTopRightRadius: '0.5rem',
-      borderBottom: '1px solid #e5e7eb',
-      minHeight: '56px',
-    },
-  },
-  headCells: {
-    style: {
-      paddingLeft: '1.5rem',
-      paddingRight: '1.5rem',
-      fontSize: '0.875rem',
-      fontWeight: '600',
-      color: '#374151',
-      textTransform: 'uppercase',
-    },
-  },
-  cells: {
-    style: {
-      paddingLeft: '1.5rem',
-      paddingRight: '1.5rem',
-    },
-  },
-  rows: {
-    style: {
-      minHeight: '72px',
-      '&:not(:last-of-type)': {
-        borderBottom: '1px solid #e5e7eb',
-      },
-      '&:hover': {
-        backgroundColor: '#f9fafb',
-      },
-    },
-  },
-};
-
-
 const List = () => {
   const [employees, setEmployees] = useState([]);
   const [empLoading, setEmpLoading] = useState(false);
@@ -127,13 +81,6 @@ const List = () => {
         columns={columns}
         data={filteredEmployee}
         fixedHeader
-        customStyles={customStyles}
-        progressPending={empLoading}
-        noDataComponent={
-          <div className="p-6 text-center text-gray-500">
-            Aucun employé trouvé
-          </div>
-        }
       />
     </div>
   </div>
