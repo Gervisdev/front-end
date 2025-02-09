@@ -10,7 +10,7 @@ const EmployeeDashboard = () => {
       <div className='flex h-screen'>
          <div className={`flex-1 transition-all duration-300 ${sidebarToggle ? "" : ""} w-full`}>
             <Sidebar sidebarToggle={sidebarToggle}/>
-            <div className='flex-1 w-full ml-64 bg-gray-100'>
+            <div className='flex-1 w-full bg-gray-100'>
             <Navbar
                  sidebarToggle={sidebarToggle}
                  setsidebarToggle={setsidebarToggle}
