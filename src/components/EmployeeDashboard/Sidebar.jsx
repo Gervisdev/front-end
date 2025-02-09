@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 
 const Sidebar = ({sidebarToggle}) => {
   return (
-    <div    className={`fixed w-64 h-full px-4 py-2 bg-gray-800 transition-transform duration-300 ease-in-out ${
+    <div  className={`fixed w-64 h-full px-4 py-2 bg-gray-800 transition-transform duration-300 ease-in-out ${
       sidebarToggle ? 'translate-x-0' : '-translate-x-full'
     }`}>
         <div className='my-2 mb-5'>
