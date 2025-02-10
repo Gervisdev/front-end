@@ -45,7 +45,7 @@ useEffect(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put( `http://localhost:3000/api/department/${id}`,department, {
+      const response = await axios.put( `https://backend-api-orpin-seven.vercel.app/api/department/${id}`,department, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
           },
@@ -60,7 +60,7 @@ useEffect(() => {
       }
     }  e.preventDefault();
     try {
-      const response = await axios.post( "http://localhost:3000/api/department/add",department, {
+      const response = await axios.post( "https://backend-api-orpin-seven.vercel.app/api/department/add",department, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
           },
