@@ -22,7 +22,7 @@ const Navbar = ({sidebarToggle, setsidebarToggle}) => {
             <div className='absolute right-0 z-10 hidden w-32 bg-white rounded-lg shadow group-focus:block top-full'>
               <ul className='py-2 text-sm text-gray-950 '>
                 <li><a href="">Profil</a></li>
-                <li><a href="">Déconnexion</a></li>
+                <li><a href="" onClick={logout}>Déconnexion</a></li>
               </ul>
             </div>
           </button>
