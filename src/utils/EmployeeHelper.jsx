@@ -13,8 +13,17 @@ export const columns = [
   {
       name: "Nom",
       selector: (row) => row.name,
+      cell: row => (
+        <button
+            className="text-blue-500 hover:underline"
+            onClick={() => navigate(`/employee-dashboard/employees/${Id}`)}
+        >
+            {row.name}
+        </button>
+    ),
       sortable: true,
-      width: "180px"
+      width: "180px",
+      
   },
   {
     name: "Poste",

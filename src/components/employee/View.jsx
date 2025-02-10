@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const View = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [employee, setEmployee] = useState(null);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const View = () => {
         }
       } catch (error) {
         console.error(
-          "Erreur lors de la modification des départements:",
+          "Erreur lors de la récupération des données de l'employé :",
           error
         );
         if (error.response && !error.response.data.success) {
@@ -32,13 +33,22 @@ const View = () => {
       }
     };
     fetchEmployee();
-  }, []);
+  }, [id]);
 
   return (
     <>
       {employee ? (
         <div className="max-w-3xl p-8 mx-auto mt-10 bg-white rounded-md shadow-md">
           <h2 className="mb-8 text-2xl font-bold text-center">Fiche contact</h2>
+          
+          {/* Bouton Retour en arrière */}
+          <button
+            onClick={() => navigate(-1)}
+            className="px-4 py-2 mb-6 text-white bg-gray-500 rounded-md hover:bg-gray-600"
+          >
+            ⬅️ Retour
+          </button>
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="w-64 h-64 p-2 border-2 border-gray-500 shadow-lg">
               <img
@@ -86,7 +96,7 @@ const View = () => {
           </div>
         </div>
       ) : (
-        <div>Chargement des données...</div>
+        <div className="text-center text-gray-600">Chargement des données...</div>
       )}
     </>
   );
