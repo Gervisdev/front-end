@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FaBuilding, FaCogs, FaTachometerAlt, FaUsers } from 'react-icons/fa'
 import {NavLink} from 'react-router-dom'
 
-const AdminSidebar = ({sidebarToggle}) => {
+const AdminSidebar = ({sidebarToggle, setsidebarToggle}) => {
 
   const sidebarRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        setSidebarToggle(false);
+        setsidebarToggle(false);
       }
     };
 
