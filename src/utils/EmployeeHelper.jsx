@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 
@@ -16,7 +16,7 @@ export const columns = [
       cell: row => (
         <button
             className="text-blue-500 hover:underline"
-            onClick={() => navigate(`/employee-dashboard/employees/${Id}`)}
+            onClick={() => Navigate(`/employee-dashboard/employees/${Id}`)}
         >
             {row.name}
         </button>
