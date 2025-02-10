@@ -5,7 +5,8 @@ import { useAuth } from "../context/AuthContext";
 export const columns = [
     {
         name: "S No",
-        selector: (row) => row.sno
+        selector: (row) => row.sno,
+         width: "40px"
     },
     {
         name: "Nom département",
