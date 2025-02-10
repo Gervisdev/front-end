@@ -9,11 +9,14 @@ export const columns = [
     },
     {
         name: "Nom département",
-        selector: (row) => row.dep_name
+        selector: (row) => row.dep_name,
+        width: "100px"
     },
     {
         name: "Action",
-        cell: (row) => row.action
+        cell: (row) => row.action,
+        center :"true",
+        width: "260px"
     },
 ];
 

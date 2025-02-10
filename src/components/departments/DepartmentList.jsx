@@ -76,8 +76,12 @@ const DepartmentList = () => {
           Nouveau département
         </Link>
       </div>
-      <div className="mt-5">
-        <DataTable columns={columns} data={filteredDepartments}  pagination/>
+      <div className="mt-6 overflow-x-auto">
+        <DataTable
+         columns={columns}
+        data={filteredDepartments} 
+        fixedHeader
+         />
       </div>
     </div>
    } </>
