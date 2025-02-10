@@ -29,7 +29,7 @@ const List = () => {
             dep_name: emp.department.dep_name,
             name: emp.userId.name,
             designation: emp.designation,
-            profileImage: <img width={40} className='rounded-full' src={`http://localhost:3000/${emp.userId.profileImage}`} />,
+            profileImage: <img width={40} className='rounded-full' src={emp.userId.profileImage} />,
             action: (< EmployeeButtons Id={emp._id} />),
           }));
           setEmployees(data);

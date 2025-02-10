@@ -42,7 +42,7 @@ const View = () => {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="w-64 h-64 p-2 border-2 border-gray-500 shadow-lg">
               <img
-                src={`http://localhost:3000/${employee.userId.profileImage}`}
+                src={employee.userId.profileImage}
                 alt="Profile"
                 className="object-cover w-full h-48 rounded-md"
               />

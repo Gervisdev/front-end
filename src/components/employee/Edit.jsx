@@ -66,7 +66,7 @@ const Edit = () => {
     e.preventDefault()
 
     try {
-      const response = await axios.put( `http://localhost:3000/api/employee/${id}`,employee, {
+      const response = await axios.put( `https://backend-api-orpin-seven.vercel.app/api/employee/${id}`,employee, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
           },
