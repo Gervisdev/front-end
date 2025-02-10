@@ -2,7 +2,30 @@ import React from 'react'
 import { FaBuilding, FaCogs, FaTachometerAlt, FaUsers } from 'react-icons/fa'
 import {NavLink} from 'react-router-dom'
 
-const Sidebar = ({sidebarToggle}) => {
+const Sidebar = ({sidebarToggle, setsidebarToggle}) => {
+
+    const sidebarRef = useRef(null);
+  
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+          setsidebarToggle(false);
+        }
+      };
+  
+      // Ajouter l'écoute pour `mousedown` (desktop) et `touchstart` (mobile)
+      if (sidebarToggle) {
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('touchstart', handleClickOutside);
+      }
+  
+      // Cleanup
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+        document.removeEventListener('touchstart', handleClickOutside);
+      };
+    }, [sidebarToggle]);
+
   return (
     <div  className={`fixed w-64 h-full px-4 py-2 bg-gray-800 transition-transform duration-300 ease-in-out ${
       sidebarToggle ? 'translate-x-0' : '-translate-x-full'

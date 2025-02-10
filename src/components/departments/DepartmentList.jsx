@@ -62,16 +62,16 @@ const DepartmentList = () => {
       <div className="text-center">
         <h3 className="text-2xl font-bold">Gestion de département</h3>
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
         <input
           type="text"
           placeholder=" Nom département"
-          className="px-4 py-0.5 border"
+          className="w-full px-4 py-2 border md:w-auto"
           onChange={filterDepartments}
         />
         <Link
           to="/admin-dashboard/add-department"
-          className="px-4 py-1 text-white rounded bg-amber-600"
+          className="w-full px-4 py-2 text-center text-white rounded bg-amber-600 md:w-auto"
         >
           Nouveau département
         </Link>
