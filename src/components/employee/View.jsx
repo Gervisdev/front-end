@@ -33,7 +33,7 @@ const View = () => {
       }
     };
     fetchEmployee();
-  }, [id]);
+  }, );
 
   return (
     <>
