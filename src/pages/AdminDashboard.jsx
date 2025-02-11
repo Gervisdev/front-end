@@ -14,11 +14,12 @@ const AdminDashboard = () => {
         <div className={`flex-1 transition-all duration-300 ${sidebarToggle ? "" : ""} w-full`}>
             
             <div className='flex-1 bg-gray-100 W-full'>
-            <AdminSidebar sidebarToggle={sidebarToggle} setsidebarToggle={setsidebarToggle}/>  
+           
             <Navbar 
             sidebarToggle={sidebarToggle}
             setsidebarToggle={setsidebarToggle}
             />
+             <AdminSidebar sidebarToggle={sidebarToggle} setsidebarToggle={setsidebarToggle}/>  
             <Outlet/>
             </div>
         </div>
