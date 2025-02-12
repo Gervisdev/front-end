@@ -25,6 +25,7 @@ const AuthContext = ({children}) => {
               console.log(response)
                 if(response.data.success){
                    setUser(response.data.user)
+                   console.log("Utilisateur authentifié :", response.data.user);
                 }
                 }else{
                    setUser(null);
