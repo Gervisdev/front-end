@@ -17,14 +17,8 @@ const Navbar = ({sidebarToggle, setsidebarToggle}) => {
           <FaBell className="w-6 h-6"/>
         </div>
         <div className='relative'>
-          <button className='text-white group'>
+          <button className='text-white group' onClick={logout}>
             <FaUserCircle className="w-6 h-6 mt-1"/>
-            <div className='absolute right-0 z-10 hidden w-32 bg-white rounded-lg shadow group-focus:block top-full'>
-              <ul className='py-2 text-sm text-gray-950 '>
-                <li><a href="">Profil</a></li>
-                <li><a href="" onClick={logout}>Déconnexion</a></li>
-              </ul>
-            </div>
           </button>
         </div>
       </div>
