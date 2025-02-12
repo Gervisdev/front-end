@@ -15,7 +15,7 @@ export const columns = [
       selector: (row) => row.name,
       cell: row => (
         <button
-            className="text-blue-500 hover:underline"
+            className="text-gray-500 hover:underline"
             onClick={() => Navigate(`/employee-dashboard/employees/${Id}`)}
         >
             {row.name}
