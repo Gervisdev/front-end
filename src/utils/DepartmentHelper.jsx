@@ -11,7 +11,7 @@ export const columns = [
     },
     {
         name: "Action",
-        cell: (row) => row.action
+        cell: (row) => <DepartmentButtons DepId={row.id} OnDepartmentDelete={() => {}} />
     },
 ];
 
