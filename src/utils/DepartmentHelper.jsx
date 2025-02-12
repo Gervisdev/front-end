@@ -3,19 +3,15 @@ import axios from "axios"
 import { useAuth } from "../context/AuthContext";
 
 export const columns = [
-    {
-        name: "S No",
-        selector: (row) => row.sno,
-         width: "40px"
-    },
+
     {
         name: "Nom département",
-        selector: (row) => row.dep_name,
-        width: "100px"
+        selector: (row) => row.dep_name
+        
     },
     {
         name: "Action",
-        cell: (row) => row.action,
+        cell: (row) => row.action
     },
 ];
 
