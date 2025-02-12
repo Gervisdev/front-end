@@ -18,8 +18,6 @@ export const DepartmentButtons = ({ DepId, OnDepartmentDelete }) => {
   const { user } = useAuth(); //récupération de l'utilisateur depuis le contexte//
   const isAdmin = user?.role === "admin"; //vérification si l'utilisateur est un admin//
 
-  console.log("Utilisateur dans DepartmentButtons :", user);
-  console.log("isAdmin :", isAdmin);
 
   const handleDelete = async (id) => {
     const confirm = window.confirm("Etes vous sure de votre choix ?");
