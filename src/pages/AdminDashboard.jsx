@@ -11,7 +11,7 @@ const AdminDashboard = () => {
     const [sidebarToggle, setsidebarToggle] = useState(false)
     return (
         <div className='flex h-screen'>
-        <div className={`flex-1 transition-all duration-300 ${sidebarToggle ? "" : "ml-64"} w-full`}>
+        <div className={`flex-1 transition-all duration-300 ${sidebarToggle ? "w-64" : ""} w-full`}>
             
             <div className='flex-1 w-full bg-gray-100'>
            
