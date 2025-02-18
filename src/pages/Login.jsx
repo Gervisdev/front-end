@@ -66,15 +66,6 @@ const Login = () => {
              required
               />
           </div>
-          <div className="flex items-center justify-between mb-4 ">
-            <label className="inline-flex items-center">
-                <input type="checkbox" className="form-checkbox" />
-                <span className="ml-2 text-gray-700">Se souvenir </span>
-            </label>
-           <a href="#" className="text-blue-400">
-            mot de passe oublié ?
-           </a>
-          </div >
           <div className="mb-4">
           <button
           type="submit"
