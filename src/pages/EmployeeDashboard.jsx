@@ -7,17 +7,16 @@ import Navbar from '../components/dashboard/Navbar'
 const EmployeeDashboard = () => {
    const [sidebarToggle, setsidebarToggle] = useState(false)
   return (
-      <div className='flex h-screen'>
-         <div className={`flex-1 transition-all duration-300 ${sidebarToggle ? "" : ""} w-full`}>
-          
-            <div className='flex-1 w-full bg-gray-100'>
+      <div className='flex h-screen bg-white'>
+             <Sidebar 
+            sidebarToggle={sidebarToggle}
+            setsidebarToggle={setsidebarToggle}/>
+         <div className={`flex-1 transition-all duration-300 ${sidebarToggle ? "ml-64" : "ml-0"}`}>
             <Navbar
                  sidebarToggle={sidebarToggle}
                  setsidebarToggle={setsidebarToggle}
             />
-              <Sidebar 
-            sidebarToggle={sidebarToggle}
-            setsidebarToggle={setsidebarToggle}/>
+              <div className='p-4'>
             <Outlet/>
             </div>
         </div>

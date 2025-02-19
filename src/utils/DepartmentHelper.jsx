@@ -10,6 +10,8 @@ export const columns = [
   {
     name: "Action",
     cell: (row) => row.action,
+    center:"true",
+    width:"260px"
   },
 ];
 
