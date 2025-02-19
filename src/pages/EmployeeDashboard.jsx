@@ -7,7 +7,7 @@ import Navbar from '../components/dashboard/Navbar'
 const EmployeeDashboard = () => {
    const [sidebarToggle, setsidebarToggle] = useState(false)
   return (
-      <div className='flex h-screen bg-white'>
+      <div className='flex-1 h-screen bg-white'>
              <Sidebar 
             sidebarToggle={sidebarToggle}
             setsidebarToggle={setsidebarToggle}/>
