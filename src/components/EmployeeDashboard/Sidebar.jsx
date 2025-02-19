@@ -5,6 +5,13 @@ import {NavLink} from 'react-router-dom'
 const Sidebar = ({sidebarToggle, setsidebarToggle}) => {
 
     const sidebarRef = useRef(null);
+
+    
+  // Fonction pour fermer le sidebar lorsqu'un lien est cliqué
+  const handleLinkClick = () => {
+    setsidebarToggle(false);
+  };
+
   
     useEffect(() => {
       const handleClickOutside = (event) => {
@@ -38,19 +45,22 @@ const Sidebar = ({sidebarToggle, setsidebarToggle}) => {
         <hr />
         <ul className='mt-3 font-bold text-white'>
           <li className='py-2 mb-2 rounded shadow hover:shadow hover:bg-blue-700'>
-            <NavLink to="/employee-dashboard" className="px-3">
+            <NavLink to="/employee-dashboard" className="px-3"
+            onClick={handleLinkClick}>
               <FaTachometerAlt className='inline-block w-6 h-6 mb-1 mr-2'/>
                 Tableau de bord
             </NavLink>
           </li>
           <li className='py-2 mb-2 rounded shadow hover:shadow hover:bg-blue-700'>
-            <NavLink to="/employee-dashboard/employees" className="px-3">
+            <NavLink to="/employee-dashboard/employees" className="px-3"
+            onClick={handleLinkClick}>
               <FaUsers className='inline-block w-6 h-6 mb-1 mr-2'/>
                Employés
             </NavLink>
           </li>
           <li className='py-2 mb-2 rounded shadow hover:shadow hover:bg-blue-700'>
-            <NavLink to="/employee-dashboard" className="px-3">
+            <NavLink to="/employee-dashboard" className="px-3"
+            onClick={handleLinkClick}>
               <FaCogs className='inline-block w-6 h-6 mb-1 mr-2'/>
                Paramètres
             </NavLink>
