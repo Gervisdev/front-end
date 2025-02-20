@@ -5,21 +5,24 @@ import { useAuth } from "../context/AuthContext";
 
 export const columns = [
  
-  {
-    name: "Image",
-    selector: (row) => row.profileImage,
-    width: "100px"
-  },
+
   {
       name: "Nom",
       selector: (row) => row.name,
       cell: row => (
+        <div className="flex items-center space-x-2">
+        <img
+          src={row.profileImage}
+          alt="Profil"
+          className="object-cover w-8 h-8 rounded-full"
+        />
         <button
-            className="text-gray-500 hover:underline"
-            onClick={() => Navigate(`/employee-dashboard/employees/${Id}`)}
+          className="text-gray-500 hover:underline"
+          onClick={() => useNavigate(`/employee-dashboard/employees/${row.id}`)}
         >
-            {row.name}
+          {row.name}
         </button>
+      </div>
     ),
       sortable: true,
       width: "180px",
