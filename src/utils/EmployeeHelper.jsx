@@ -9,22 +9,6 @@ export const columns = [
   {
       name: "Nom",
       selector: (row) => row.name,
-      cell: row => (
-        <div className="flex items-center space-x-2">
-        <img
-          src={row.profileImage}
-          alt="Profil"
-          className="object-cover w-8 h-8 rounded-full"
-        />
-        <button
-          className="text-gray-500 hover:underline"
-          onClick={() => useNavigate(`/employee-dashboard/employees/${row.id}`)}
-        >
-          {row.name}
-        </button>
-      </div>
-    ),
-      sortable: true,
       width: "180px",
       
   },
