@@ -79,6 +79,7 @@ const List = () => {
     <div className="mt-6 overflow-x-auto ">
       <DataTable
         columns={columns}
+        noDataComponent="Aucune donnée disponible pour le moment."
         data={filteredEmployee}
         fixedHeader
       />
