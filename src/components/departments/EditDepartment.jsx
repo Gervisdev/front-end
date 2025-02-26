@@ -60,12 +60,7 @@ useEffect(() => {
       }
     }  e.preventDefault();
     try {
-      const response = await axios.post( "https://backend-api-orpin-seven.vercel.app/api/department/add",department, {
-          headers: {
-            "Authorization": `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
+ 
       if (response.data.success) {
         navigate("/admin-dashboard/department");
       }
