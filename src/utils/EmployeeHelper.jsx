@@ -70,7 +70,7 @@ export const columns = [
       }
   
       try {
-          await axios.delete(`http://localhost:3000/api/employee/${Id}`, {
+          await axios.delete(`https://backend-api-orpin-seven.vercel.app/api/employee/${Id}`, {
               headers: {
                   Authorization: `Bearer ${localStorage.getItem("token")}`,
               },
