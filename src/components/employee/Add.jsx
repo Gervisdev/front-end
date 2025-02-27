@@ -184,23 +184,7 @@ const Add = () => {
               <option value="employee">Employé</option>
             </select>
           </div>
-          {/* image Upload */}
-          <div>
-            <label
-              htmlFor=""
-              className="block text-sm text-gray-700 font-meduim"
-            >
-              Image profil
-            </label>
-            <input
-              type="file"
-              name="image"
-              onChange = {handleChange}
-              placeholder="téléverser une image"
-              accept="image/*"
-              className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
-            />
-          </div>
+       
           {/* phone numbber*/}
           <div>
            
