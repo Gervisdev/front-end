@@ -59,10 +59,10 @@ export const columns = [
 
   export const EmployeeButtons = ({Id}) =>{
     const Navigate = useNavigate()
-    const {user} = useAuth() //récupération de l'utilisateur depuis le contexte//
+    const {user} = useAuth()
 
     
-    const isAdmin = user?.role==="admin"//vérification si l'utilisateur est un admin//
+    const isAdmin = user?.role==="admin"
 
     const handleDelete = async () => {
       if (!window.confirm("Voulez-vous vraiment supprimer cet employé ?")) {
@@ -77,7 +77,7 @@ export const columns = [
           });
   
           alert("Employé supprimé avec succès !");
-          window.location.reload(); // Recharge la page après suppression
+          window.location.reload(); 
       } catch (error) {
           console.error("Erreur lors de la suppression :", error);
           alert(error.response?.data?.error || "Une erreur est survenue lors de la suppression.");

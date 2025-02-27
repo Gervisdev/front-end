@@ -87,42 +87,8 @@ const Add = () => {
             />
           </div>
 
-          {/* Employee ID*/}
-          <div>
-            <label
-              htmlFor=""
-              className="block text-sm text-gray-700 font-meduim"
-            >
-              ID Employé
-            </label>
-            <input
-              type="text"
-              name="employeeId"
-              onChange = {handleChange}
-              placeholder="Identifiant Employé"
-              className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
-              required
-            />
-          </div>
 
-          {/* Date of Birth */}
 
-          <div>
-            <label
-              htmlFor=""
-              className="block text-sm text-gray-700 font-meduim"
-            >
-              Date de naissance
-            </label>
-            <input
-              type="date"
-              name="dob"
-              onChange = {handleChange}
-              placeholder="date de naissance"
-              className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
-              required
-            />
-          </div>
           {/* Gender */}
           <div>
             <label
@@ -141,26 +107,6 @@ const Add = () => {
               <option value="male">Masculin</option>
               <option value="female">Féminin</option>
               <option value="other">Autres</option>
-            </select>
-          </div>
-          {/* Marital Status*/}
-          <div>
-            <label
-              htmlFor=""
-              className="block text-sm text-gray-700 font-meduim"
-            >
-              Situation Matrimoniale
-            </label>
-            <select
-              name="maritalStatus"
-              onChange = {handleChange}
-              placeholder="Situation Matrimoniale"
-              className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
-              required
-            >
-              <option value="">Sélectionner le statut</option>
-              <option value="male">Célibataire</option>
-              <option value="female">Marié</option>
             </select>
           </div>
            {/* designation*/}
