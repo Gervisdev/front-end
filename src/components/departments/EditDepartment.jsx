@@ -45,7 +45,7 @@ useEffect(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put( `https://backend-api-orpin-seven.vercel.app/api/department/${id}`,department, {
+      const response = await axios.put( `https://annuaire-api-olive.vercel.app/api/department/${id}`,department, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
           },
