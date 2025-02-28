@@ -15,7 +15,7 @@ const AddDepartment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post( "https://backend-api-orpin-seven.vercel.app/api/department/add",department, {
+      const response = await axios.post( "https://annuaire-api-olive.vercel.app/api/department/add",department, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("token")}`,
           },

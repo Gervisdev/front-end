@@ -28,7 +28,7 @@ export const DepartmentButtons = ({ DepId, OnDepartmentDelete }) => {
 
     try {
       const response = await axios.delete(
-        `https://backend-api-orpin-seven.vercel.app/api/department/${id}`,
+        `https://annuaire-api-olive.vercel.app/api/department/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

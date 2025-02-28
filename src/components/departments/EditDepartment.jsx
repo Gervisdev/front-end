@@ -15,7 +15,7 @@ useEffect(() => {
     const fetchDepartments = async () => {
       setDepLoading(true)
       try {
-        const response = await axios.get( `https://backend-api-orpin-seven.vercel.app/api/department/${id}`, {
+        const response = await axios.get( `https://annuaire-api-olive.vercel.app/api/department/${id}`, {
             headers: {
               "Authorization":`Bearer ${localStorage.getItem("token")}`,  
             },

@@ -37,7 +37,7 @@ export const columns = [
  export const fetchDepartments = async () => {
     let departments 
     try {
-      const response = await axios.get( "https://backend-api-orpin-seven.vercel.app/api/department", {
+      const response = await axios.get( "https://annuaire-api-olive.vercel.app/api/department", {
           headers: {
             "Authorization":`Bearer ${localStorage.getItem("token")}`,  
           },
@@ -70,7 +70,7 @@ export const columns = [
       }
   
       try {
-          await axios.delete(`https://backend-api-orpin-seven.vercel.app/api/employee/${Id}`, {
+          await axios.delete(`https://annuaire-api-olive.vercel.app/api/employee/${Id}`, {
               headers: {
                   Authorization: `Bearer ${localStorage.getItem("token")}`,
               },
