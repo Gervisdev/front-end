@@ -18,7 +18,11 @@ export const columns = [
      width: "160px"
   },
  
-
+ /* {
+    name: "Département",
+    selector: (row) => row.dep_name,
+    width: "160px"
+},*/
 
   {
       name: "Action",
@@ -30,7 +34,28 @@ export const columns = [
 
 
 
- 
+ export const fetchDepartments = async () => {
+    let departments 
+    try {
+      const response = await axios.get( "https://annuaire-api-olive.vercel.app/api/department", {
+          headers: {
+            "Authorization":`Bearer ${localStorage.getItem("token")}`,  
+          },
+        }
+      );
+      
+      if (response.data.success) {
+         departments = response.data.departments
+      
+      }
+    } catch (error) {
+      console.error("Erreur lors de la récupération des départements:", error); 
+      if (error.response && !error.response.data.success) {
+        alert(error.response.data.error||"erreur est survenue");
+      }
+    }
+    return departments
+  };
 
   export const EmployeeButtons = ({Id}) =>{
     const Navigate = useNavigate()
