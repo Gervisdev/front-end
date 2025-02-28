@@ -18,11 +18,11 @@ export const columns = [
      width: "160px"
   },
  
-  {
+ /* {
     name: "Département",
     selector: (row) => row.dep_name,
     width: "160px"
-},
+},*/
 
   {
       name: "Action",
@@ -34,7 +34,7 @@ export const columns = [
 
 
 
- export const fetchDepartments = async () => {
+/* export const fetchDepartments = async () => {
     let departments 
     try {
       const response = await axios.get( "https://annuaire-api-olive.vercel.app/api/department", {
@@ -55,7 +55,7 @@ export const columns = [
       }
     }
     return departments
-  };
+  };*/
 
   export const EmployeeButtons = ({Id}) =>{
     const Navigate = useNavigate()
