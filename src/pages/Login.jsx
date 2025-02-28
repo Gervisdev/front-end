@@ -16,7 +16,7 @@ const Login = () => {
        
         try{
             const response = await axios.post(
-                "https://backend-api-orpin-seven.vercel.app/api/auth/login",
+                "https://annuaire-api-olive.vercel.app/api/auth/login",
                 {email,password}
             );
             if(response.data.success){
