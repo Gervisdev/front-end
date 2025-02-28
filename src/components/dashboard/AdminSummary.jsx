@@ -9,7 +9,7 @@ const AdminSummary = () => {
   useEffect(() => {
     const fetchSummary = async () => {
       try{
-        const summary = await axios.get('https://backend-api-orpin-seven.vercel.app/api/dashboard/summary',{
+        const summary = await axios.get('https://annuaire-api-olive.vercel.app/api/dashboard/summary',{
           headers:{
            " Authorization" : `Bearer ${localStorage.getItem('token')}`
           }
