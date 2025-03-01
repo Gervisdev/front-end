@@ -26,7 +26,7 @@ const List = () => {
           const data = response.data.employees.map((emp) => ({
             _id: emp._id,
             sno: sno++,
-            dep_name: emp.department.dep_name,
+            dep_name: emp.dep_name,
             name: emp.userId.name,
             designation: emp.designation,
             profileImage: <img width={40} className='rounded-full' src={emp.userId.profileImage} />,
