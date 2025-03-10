@@ -48,14 +48,14 @@ const Sidebar = ({sidebarToggle, setsidebarToggle}) => {
             <NavLink to="/employee-dashboard" className="px-3"
             onClick={handleLinkClick}>
               <FaTachometerAlt className='inline-block w-6 h-6 mb-1 mr-2'/>
-                Tableau de bord
+                Accueil
             </NavLink>
           </li>
           <li className='py-2 mb-2 rounded shadow hover:shadow hover:bg-blue-700'>
             <NavLink to="/employee-dashboard/employees" className="px-3"
             onClick={handleLinkClick}>
               <FaUsers className='inline-block w-6 h-6 mb-1 mr-2'/>
-               Employés
+               Contacts
             </NavLink>
           </li>
         </ul>
