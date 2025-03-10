@@ -12,10 +12,6 @@ const Navbar = ({sidebarToggle, setsidebarToggle}) => {
         <span className='font-bold text-white'>Société Patrimoine</span>
       </div>
       <div className='flex items-center gap-x-5'>
-      
-        <div className='text-white'>
-          <FaBell className="w-6 h-6"/>
-        </div>
         <div className='relative'>
           <button className='text-white group' onClick={logout}>
             <FaUserCircle className="w-6 h-6 mt-1"/>
