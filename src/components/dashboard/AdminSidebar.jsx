@@ -63,13 +63,6 @@ const AdminSidebar = ({sidebarToggle, setsidebarToggle}) => {
                Départements
             </NavLink>
           </li>
-          <li className='py-2 mb-2 rounded shadow hover:shadow hover:bg-blue-700'>
-            <NavLink to="/admin-dashboard" className="px-3"
-             onClick={handleLinkClick}>
-              <FaCogs className='inline-block w-6 h-6 mb-1 mr-2'/>
-               Paramètres
-            </NavLink>
-          </li>
         </ul>
     </div>
   )
