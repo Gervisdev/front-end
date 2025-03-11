@@ -27,7 +27,7 @@ const List = () => {
             _id: emp._id,
             sno: sno++,
             dep_name: emp.dep_name,
-            name: emp.userId.name,
+            name: emp.userId?.name || "pas de nom",
             designation: emp.designation,
             profileImage: <img width={40} className='rounded-full' src={emp.userId.profileImage} />,
             action: (< EmployeeButtons Id={emp._id} />),
