@@ -40,7 +40,7 @@ const Login = () => {
     <div className=" flex flex-col items-center h-screen justify-center
       bg-gradient-to-b from-blue-300 from-50% to-gray-100  to-50%  space-y-6"
      >
-      <h2 className="text-3xl text-white font-pacific">Société Patrimoine</h2>
+      <h2 className="text-3xl text-white font-pacific">Société de Patrimoine</h2>
    
         <div className="p-6 bg-white border shadow w-80">
           <h2 className="mb-4 text-2xl font-bold">connexion</h2>
