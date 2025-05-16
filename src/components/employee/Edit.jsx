@@ -35,7 +35,6 @@ const Edit = () => {
         );
         if (response.data.success) {
           const employee = response.data.employee;
-          console.log("EMPLOYEE RESPONSE:", employee);
           setEmployee((prev) => ({
             ...prev,
             name: employee.userId.name,
