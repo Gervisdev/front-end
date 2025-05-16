@@ -182,7 +182,7 @@ const Edit = () => {
               type="submit"
               className="w-full px-4 py-2 mt-6 font-bold text-white rounded bg-amber-600 hover:bg-amber-700"
             >
-              Enregistrer employé
+              Modfier employé
             </button>
           </form>
         </div>
