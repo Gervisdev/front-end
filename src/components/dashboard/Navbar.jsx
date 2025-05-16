@@ -1,6 +1,7 @@
 import React from 'react'
 import {useAuth} from '../../context/AuthContext'
 import { FaBars, FaBell, FaSearch, FaUser, FaUserCircle } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const Navbar = ({sidebarToggle, setsidebarToggle}) => {
     const {user, logout} = useAuth()
@@ -9,7 +10,9 @@ const Navbar = ({sidebarToggle, setsidebarToggle}) => {
       <div className='flex items-center text-xl'>
         <FaBars className='text-white cursor-pointer me-4'
          onClick={()=>setsidebarToggle(!sidebarToggle)}/>
+       <Link href="https://annuaire-sp.vercel.app/admin-dashboard">
         <span className='font-bold text-white'>Société Patrimoine</span>
+       </Link>
       </div>
       <div className='flex items-center gap-x-5'>
         <div className='relative'>
