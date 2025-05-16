@@ -37,11 +37,13 @@ const Edit = () => {
           );
           if (response.data.success) {
             const employee = response.data.employee
+             console.log("EMPLOYEE RESPONSE:", employee);
             setEmployee((prev)=> ({
               ...prev, 
               name: employee.userId.name , 
               designation : employee.designation,
-              department : employee.department
+              department : employee.department,
+              contact : employee.contact
             }));
           }
         } catch (error) {
@@ -55,7 +57,7 @@ const Edit = () => {
         }
       };
       fetchEmployee();
-  },[]);
+  },[id]);
   
   const handleChange = (e) =>{
     const {name,value} = e.target;
