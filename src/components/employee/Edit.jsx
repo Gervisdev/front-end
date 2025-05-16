@@ -1,76 +1,77 @@
 import React, { useEffect, useState } from "react";
 import { fetchDepartments } from "../../utils/EmployeeHelper";
 import axios from "axios";
-import {useNavigate, useParams} from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom";
 
 const Edit = () => {
   const [employee, setEmployee] = useState({
-    name : '',
-    designation : '',
-    department : '',
-    contact : ''
+    name: "",
+    designation: "",
+    department: "",
+    contact: "",
   });
   const [departments, setDepartments] = useState(null);
-  const navigate = useNavigate()
-  const {id} = useParams()
-
-
+  const navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
-    const getDepartments =  async () => {
-    const departments = await fetchDepartments();
-     setDepartments(departments); 
+    const getDepartments = async () => {
+      const departments = await fetchDepartments();
+      setDepartments(departments);
     };
     getDepartments();
-  },[]);
+  }, []);
 
   useEffect(() => {
     const fetchEmployee = async () => {
-        try {
-          const response = await axios.get(
-            `https://annuaire-api-olive.vercel.app/api/employee/${id}`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          );
-          if (response.data.success) {
-            const employee = response.data.employee
-             console.log("EMPLOYEE RESPONSE:", employee);
-            setEmployee((prev)=> ({
-              ...prev, 
-              name: employee.userId.name , 
-              designation : employee.designation,
-              department : employee.department,
-              contact : employee.contact
-            }));
+      try {
+        const response = await axios.get(
+          `https://annuaire-api-olive.vercel.app/api/employee/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
           }
-        } catch (error) {
-          console.error(
-            "Erreur lors de la modification des départements:",
-            error
-          );
-          if (error.response && !error.response.data.success) {
-            alert(error.response.data.error || "erreur est survenue");
-          }
+        );
+        if (response.data.success) {
+          const employee = response.data.employee;
+          console.log("EMPLOYEE RESPONSE:", employee);
+          setEmployee((prev) => ({
+            ...prev,
+            name: employee.userId.name,
+            designation: employee.designation,
+            department: typeof employee.department === 'object' ? employee.department._id : employee.department,
+            contact: employee.contact,
+          }));
         }
-      };
-      fetchEmployee();
-  },[id]);
-  
-  const handleChange = (e) =>{
-    const {name,value} = e.target;
-      setEmployee((prevData) =>({...prevData, [name] : value}))
+      } catch (error) {
+        console.error(
+          "Erreur lors de la modification des départements:",
+          error
+        );
+        if (error.response && !error.response.data.success) {
+          alert(error.response.data.error || "erreur est survenue");
+        }
+      }
     };
-  
+    fetchEmployee();
+  }, [id]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEmployee((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-      const response = await axios.put( `https://annuaire-api-olive.vercel.app/api/employee/${id}`,employee, {
+      const response = await axios.put(
+        `https://annuaire-api-olive.vercel.app/api/employee/${id}`,
+        employee,
+        {
           headers: {
-            "Authorization": `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
       );
@@ -82,103 +83,122 @@ const Edit = () => {
         alert(error.response.data.error);
       }
     }
-  }
+  };
+  const selectedDepartment = departments.find(
+    (dep) => dep._id === employee.department
+  );
   return (
-    <>{departments && employee ? (
-    <div className="max-w-4xl p-8 mx-auto mt-10 bg-white rounded-md shadow-md">
-      <h2 className="mb-6 text-2xl font-bold"> Modification des informations d'un employé</h2>
-      <form onSubmit = {handleSubmit}>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {/* Name */}
-          <div>
-            <label
-              htmlFor=""
-              className="block text-sm text-gray-700 font-meduim"
-            >
-              Nom
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={employee.name}
-              onChange = {handleChange}
-              placeholder="Entrez le nom"
-              className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
-              required
-            />
-          </div>
+    <>
+      {departments && employee ? (
+        <div className="max-w-4xl p-8 mx-auto mt-10 bg-white rounded-md shadow-md">
+          <h2 className="mb-6 text-2xl font-bold">
+            {" "}
+            Modification des informations d'un employé
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {/* Name */}
+              <div>
+                <label
+                  htmlFor=""
+                  className="block text-sm text-gray-700 font-meduim"
+                >
+                  Nom
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={employee.name}
+                  onChange={handleChange}
+                  placeholder="Entrez le nom"
+                  className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
+                  required
+                />
+              </div>
 
-        
-           {/* designation*/}
-           
-          <div>
-            <label
-              htmlFor=""
-              className="block text-sm text-gray-700 font-meduim"
+              {/* designation*/}
+
+              <div>
+                <label
+                  htmlFor=""
+                  className="block text-sm text-gray-700 font-meduim"
+                >
+                  Poste occupé
+                </label>
+                <input
+                  type="text"
+                  name="designation"
+                  value={employee.designation}
+                  onChange={handleChange}
+                  placeholder="Poste occupé"
+                  className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
+                  required
+                />
+              </div>
+              {/* Department*/}
+              <div>
+                <label
+                  htmlFor=""
+                  className="block text-sm text-gray-700 font-meduim"
+                >
+                  Département
+                </label>
+
+                {selectedDepartment && (
+                  <p className="mb-2 text-sm text-gray-500">
+                    Département actuel :{" "}
+                    <span className="font-semibold text-gray-800">
+                      {selectedDepartment.dep_name}
+                    </span>
+                  </p>
+                )}
+                <select
+                  name="department"
+                  onChange={handleChange}
+                  value={employee.department}
+                  className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
+                  required
+                >
+                  <option value="">Sélectionner un département</option>
+                  {departments.map((dep) => (
+                    <option key={dep._id} value={dep._id}>
+                      {dep.dep_name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* phone number*/}
+              <div>
+                <label
+                  htmlFor=""
+                  className="block text-sm text-gray-700 font-meduim"
+                >
+                  Contact
+                </label>
+                <input
+                  type="text"
+                  name="contact"
+                  value={employee.contact}
+                  onChange={handleChange}
+                  placeholder="+241 xx xx xx XX"
+                  className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
+                  required
+                />
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="w-full px-4 py-2 mt-6 font-bold text-white rounded bg-amber-600 hover:bg-amber-700"
             >
-              Poste occupé
-            </label>
-            <input
-              type="text"
-              name="designation"
-              value={employee.designation}
-              onChange = {handleChange}
-              placeholder="Poste occupé"
-              className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
-              required
-            />
-          </div>
-          {/* Department*/}
-          <div>
-            <label
-              htmlFor=""
-              className="block text-sm text-gray-700 font-meduim"
-            >
-              Département
-            </label>
-            <select
-              name="department"
-              onChange = {handleChange}
-              value={employee.department}
-              className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
-              required
-            >
-              <option value="">Sélectionner un département</option>
-              {departments.map(dep =>(
-                <option  key={dep._id} value={dep._id}>{dep.dep_name}</option>
-              ))}
-            </select>
-          </div>
-         
-          {/* phone number*/}
-          <div>
-           
-           <label
-             htmlFor=""
-             className="block text-sm text-gray-700 font-meduim"
-           >
-             Contact
-           </label>
-           <input
-             type="text"
-             name="contact"
-             value={employee.contact}
-             onChange = {handleChange}
-             placeholder="+241 xx xx xx XX"
-             className="block w-full p-2 mt-1 border border-gray-300 rounded-md"
-             required
-           />
-         </div>
+              Enregistrer employé
+            </button>
+          </form>
         </div>
-        <button
-        type="submit"
-        className="w-full px-4 py-2 mt-6 font-bold text-white rounded bg-amber-600 hover:bg-amber-700"
-        >
-          Enregistrer employé
-        </button>
-      </form>
-    </div>
-    ) :<div> Chargement des données....</div> }</>
+      ) : (
+        <div> Chargement des données....</div>
+      )}
+    </>
   );
 };
 
