@@ -84,9 +84,7 @@ const Edit = () => {
       }
     }
   };
-  const selectedDepartment = departments.find(
-    (dep) => dep._id === employee.department
-  );
+
   return (
     <>
       {departments && employee ? (
@@ -144,14 +142,7 @@ const Edit = () => {
                   Département
                 </label>
 
-                {selectedDepartment && (
-                  <p className="mb-2 text-sm text-gray-500">
-                    Département actuel :{" "}
-                    <span className="font-semibold text-gray-800">
-                      {selectedDepartment.dep_name}
-                    </span>
-                  </p>
-                )}
+             
                 <select
                   name="department"
                   onChange={handleChange}
