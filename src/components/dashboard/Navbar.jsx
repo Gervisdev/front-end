@@ -1,6 +1,6 @@
 import React from 'react'
 import {useAuth} from '../../context/AuthContext'
-import { FaBars, FaBell, FaSearch, FaUser, FaUserCircle } from 'react-icons/fa'
+import { FaBars, FaBell, FaSearch, FaUser, FaUserCircle,FaSignOutAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Navbar = ({sidebarToggle, setsidebarToggle}) => {
@@ -17,7 +17,7 @@ const Navbar = ({sidebarToggle, setsidebarToggle}) => {
       <div className='flex items-center gap-x-5'>
         <div className='relative'>
           <button className='text-white group' onClick={logout}>
-            <FaUserCircle className="w-6 h-6 mt-1"/>
+            <FaSignOutAlt className="w-6 h-6 mt-1"/>
           </button>
         </div>
       </div>
