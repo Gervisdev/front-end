@@ -39,10 +39,10 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen space-y-6 bg-blue-500 "
      >
-      <h2 className="text-3xl text-white font-pacific">Société de Patrimoine</h2>
+      <h2 className="text-3xl text-white font-garamond">Société de Patrimoine</h2>
    
         <div className="p-6 bg-white border shadow w-80">
-          <h2 className="mb-4 text-2xl font-bold">connexion</h2>
+          <h2 className="mb-4 text-2xl font-bold">Connexion</h2>
           {error && <p className="text-red-500">{error}</p>}
           <form onSubmit={handleSubmit}>
           <div className="mb-4">
