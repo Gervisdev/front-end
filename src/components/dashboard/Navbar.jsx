@@ -11,7 +11,7 @@ const Navbar = ({sidebarToggle, setsidebarToggle}) => {
         <FaBars className='text-white cursor-pointer me-4'
          onClick={()=>setsidebarToggle(!sidebarToggle)}/>
        <Link href="https://annuaire-sp.vercel.app/admin-dashboard">
-        <span className='font-bold text-white'>Société Patrimoine</span>
+        <span className='font-bold text-white'>Société de Patrimoine</span>
        </Link>
       </div>
       <div className='flex items-center gap-x-5'>
