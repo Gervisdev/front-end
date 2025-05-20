@@ -70,7 +70,7 @@ const Login = () => {
           type="submit"
           className="w-full py-2 text-white bg-blue-400"
           >
-            se connecter
+            Se Connecter
             </button>
           </div>
           
