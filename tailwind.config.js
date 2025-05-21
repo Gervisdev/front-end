@@ -9,7 +9,7 @@ module.exports = {
         "pacific":["Pacifico", 'sans-serif']
       },
       colors:{
-        "custom-blue":'#004e8c"'
+        "custom-blue":"#004e8c"
       }
     },
   },
