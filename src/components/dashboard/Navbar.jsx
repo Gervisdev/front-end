@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Navbar = ({sidebarToggle, setsidebarToggle}) => {
     const {user, logout} = useAuth()
   return ( 
-    <nav className='flex justify-between px-4 py-3 bg-gray-800 '>
+    <nav className='flex justify-between px-4 py-3 bg-custom-blue '>
       <div className='flex items-center text-xl'>
         <FaBars className='text-white cursor-pointer me-4'
          onClick={()=>setsidebarToggle(!sidebarToggle)}/>

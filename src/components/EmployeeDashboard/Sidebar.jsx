@@ -36,7 +36,7 @@ const Sidebar = ({sidebarToggle, setsidebarToggle}) => {
   return (
     <div 
     ref={sidebarRef}
-     className={`fixed w-64 h-full px-4 py-2 bg-gray-800 transition-transform duration-300 ease-in-out ${
+     className={`fixed w-64 h-full px-4 py-2 bg-custom-blue transition-transform duration-300 ease-in-out ${
       sidebarToggle ? 'translate-x-0' : '-translate-x-full'
     }`}>
         <div className='my-2 mb-5'>
