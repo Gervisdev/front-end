@@ -37,7 +37,7 @@ const Login = () => {
         }
     };
   return (
-    <div className="flex flex-col items-center justify-center h-screen space-y-6 bg-blue-500 "
+    <div className="flex flex-col items-center justify-center h-screen space-y-6 bg-custom-blue "
      >
       <h2 className="text-3xl text-white font-garamond">Société de Patrimoine</h2>
    

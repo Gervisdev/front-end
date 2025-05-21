@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       fontFamily:{
         "pacific":["Pacifico", 'sans-serif']
+      },
+      colors:{
+        "custom-blue":'#004e8c"'
       }
     },
   },
